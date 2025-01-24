@@ -1,0 +1,114 @@
+.contact_body{
+    width: 100%;
+    height: calc(100vh - 80px);  /* 100% - nav(80px) */
+    padding: 70px;
+    display: flex;
+    flex-direction: row;
+    z-index: 5;
+}
+/* Bubble */
+.contact_body::before {
+    position: absolute;
+    content: '';
+    height: 600px;
+    width: 600px;
+    border-radius: 50%;
+    left: -12%;
+    top: 40%;
+    background: linear-gradient(45deg, #7f00ff, pink);
+    animation: object1 6s linear infinite;
+}
+.contact_body::after {
+    position: absolute;
+    content: '';
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    left: 35%;
+    top: 12%;
+    background: linear-gradient(45deg, #7f00ff, pink);
+    animation: object2 6s linear infinite;
+}
+.contact_detail{
+    width: 30%;
+    height: 100%;
+    z-index: 5;
+}
+.contactme{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+h2 {
+    display: flex;
+    font-size: 4em;
+    font-weight: 900;
+    color: #3d535f;
+    overflow: hidden;
+    height: 100%;
+}
+.contact_telegram{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+.contact_telegram p {
+    width: auto;
+    margin-right: 5px;
+    font-size: 1.2em;
+    color: #3d535f;
+}
+.link_telegram i{
+    color: #7f00ff;
+}
+.contact_telegram a{
+    font-size: 25px;
+    letter-spacing: 3px;
+    text-decoration: none;
+    text-transform: capitalize;
+    margin-right: 10px;
+    color: #ff004f;
+}
+
+.contact_link{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.contact_link a{
+    font-size: 25px;
+    color: #3d535f;
+    letter-spacing: 3px;
+    text-decoration: none;
+    text-transform: capitalize;
+    margin-right: 10px;
+}
+
+.contact_input{
+    width: 70%;
+    height: 100%;
+    padding-left: 80px;
+    z-index: 5;
+}
+.contact_input form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #ECF0F1;
+    padding: 15px;
+    margin: 15px 0;
+    color: #3d535f;
+    font-size: 18px;
+    border-radius: 6px;
+}

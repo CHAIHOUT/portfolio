@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="style.css" >
+    <title>Personal Portfolio website</title>
+</head>
+<body>
+    
+    <div class="container">
+        <nav>
+            <div class="logo">portfolio<b>.</b></div>
+            <ul class="navItems">
+                <li><a href="./index.html">home</a></li>
+                <li><a href="code/about.html">About</a></li>
+                <li><a href="./code/portfolio.html">Portfolio</a></li>
+                <li><a href="./code/contact.html">Contact</a></li>
+            </ul>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/chhayhouth-voeun-84995629b/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://t.me/chaihout" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i></a>
+                <a href="https://web.facebook.com/profile.php?id=100011750035770" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+            </div>
+        </nav>
+
+        <div class="wrapper">
+            <div class="cols">
+                <span class="topline">Hello</span>
+                <h1>I'm <span class="multiText"></span></h1>
+                <p>VOEUN CHHAYHOUTH</p>
+                <div class="btns">
+                    <button id="download_cv">download CV</button>
+                </div>
+            </div>
+            <div class="cols cols0">
+                <div class="imgbox">
+                    <img src="img/splash.png" alt="" id="splash">
+                    <img src="img/hout_imgnobg.png" >
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/2afce2f13b.js" crossorigin="anonymous"></script>
+    <!-- Type.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typingEffect = new Typed(".multiText",{
+            strings : ["Web developer","System analyst","App Developer"],
+            loop : true,
+            typeSpeed : 100,
+            backSpeed : 80,
+            backDelay : 1500
+        })
+
+        document.getElementById("download_cv").addEventListener("click", function () {
+            const link = document.createElement("a");
+            link.href = "file/Android.pdf"; // Replace with your file path
+            link.download = "MY_CV.pdf"; // Optional: Rename the file
+            link.click();
+        });
+    </script>
+</body>
+</html>

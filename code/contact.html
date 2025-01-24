@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="./css/contact.css" >
+        <title>Personal Portfolio website</title>
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <div class="logo">portfolio<b>.</b></div>
+                <ul class="navItems">
+                    <li><a href="../index.html">home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./portfolio.html">Portfolio</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+                <div class="links">
+                    <a href="https://www.linkedin.com/in/chhayhouth-voeun-84995629b/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://t.me/chaihout" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i></a>
+                    <a href="https://web.facebook.com/profile.php?id=100011750035770" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                </div>
+            </nav>
+
+            <div class="contact_body">
+                <div class="contact_detail">
+                    <div class="contactme">
+                        <h2>Contact Me</h2>
+                    </div>
+                    <div class="contact_telegram">
+                        <a href="#"><i class="fab fa-telegram fa-sm"></i></a>
+                        <p>@chaihout / 086 864 673</p>
+                        <a href="https://t.me/chaihout" target="_blank" rel="noopener noreferrer" class="link_telegram"><i class="fas fa-external-link-alt fa-xs"></i></a>
+                    </div>
+                    <div class="contact_telegram">
+                        <a href="#"><i class="fa-solid fa-phone fa-xs"></i></a>
+                        <p>086 864 673</p>
+                    </div>
+                    <div class="contact_link">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                    <div class="contact_link">
+                            <button id="download_cv">download CV</button>
+                    </div>
+                </div>
+
+                <div class="contact_input">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required/>
+                        <input type="email" name="Email" placeholder="Your Email" required/>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button id="download_cv" type="submit">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Font awesome -->
+        <script src="https://kit.fontawesome.com/2afce2f13b.js" crossorigin="anonymous"></script>
+        <script>
+            document.getElementById("download_cv").addEventListener("click", function () {
+                const link = document.createElement("a");
+                link.href = "../file/Android.pdf"; // Replace with your file path
+                link.download = "MY_CV.pdf"; // Optional: Rename the file
+                link.click();
+            });
+
+
+        </script>
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbybBvhILyqlB4yPmbh_j3ryhGYm_reswTYcxf19AoFF1Xpm1CeEuQ5Fn_ZooaXIAvek/exec'
+            const form = document.forms['submit-to-google-sheet']
+            const msg = document.getElementById("msg")
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    msg.innerHTML = "Message sent successfully"
+                    setTimeout(function(){
+                        msg.innerHTML = ""
+                    },1000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+    </body>
+</html>

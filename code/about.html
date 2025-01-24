@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+        <link rel="stylesheet" href="../style.css" >
+        <link rel="stylesheet" href="./css/about.css" >
+        <title>Personal Portfolio website</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <nav>
+                <div class="logo">portfolio<b>.</b></div>
+                <ul class="navItems">
+                    <li><a href="../index.html">home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./portfolio.html">Portfolio</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+                <div class="links">
+                    <a href="https://www.linkedin.com/in/chhayhouth-voeun-84995629b/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://t.me/chaihout" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i></a>
+                    <a href="https://web.facebook.com/profile.php?id=100011750035770" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                </div>
+            </nav>
+            
+            <div class="about_body">
+                <div class="about_profile">
+                    <img src="../img/hout_imgnobg.png" />
+                </div>
+                <div class="about_detail">
+                    <div class="aboutme">
+                        <h2>About Me</h2>
+                        <div class="detail">
+                            As an extroverted person, I truly enjoy working in a team. I am friendly direct and good ay motivating people.
+                        </div>
+                    </div>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')" >Experience</p>
+                        <p class="tab-links" onclick="opentab('education')" >Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Basic Programing Language :</span><br>C/C++, JAVA, PYTHON, OOP</li>
+                            <li><span>Web Development :</span><br>Frond-End (HTML,CSS,JS,REACTJS,PHP,LARAVEL) , Back-End (LARAVEL,PHP,API)</li>
+                            <li><span>App Development :</span><br>Flutter (IOS/ANDROID) , Android Native (KOTLIN/JAVA)</li>
+                            <li><span>Database :</span><br>MySQL, phpMyAdmin, Firebase, PLSQL/SQLDeveloper</li>
+                            <li><span>Platform :</span><br>POSTMAN, XAMPP, GitHub, Jaspersoft Studio, VScode, Android Studio</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2024 - Current</span><br>Intern System Analyst at CHIEF BANK. <a href="https://www.chiefbank.com.kh/" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a></li>
+                            <li><span>2024</span><br>Designed, developed, and deployed a Flutter application on the Google Play Store. <a href="https://play.google.com/store/apps/details?id=com.loydev.tinheywan" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a></li>
+                            <li><span>2023 - 2024</span><br>Designed, developed, and hosted a web project on Hostinger (Back-End) & Firebase (Front-End), demonstrating proficiency in frontend and backend technologies, deployment, and web hosting. <a href="https://app.tinhgame.shop/" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2024 : Graduated</span><br>Bachelor's Degree in Information Technology Engineering (ITE) at Royal University of Phnom Penh (RUPP)</li>
+                            <li><span>2019 : Graduated</span><br>High School Diploma at CHEA SIM SAMAKI High School.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Font awesome -->
+        <script src="https://kit.fontawesome.com/2afce2f13b.js" crossorigin="anonymous"></script>
+
+        <script>
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+
+            function opentab(tabname){
+                for(tablink of tablinks){
+                    tablink.classList.remove("active-link");
+                }
+                for(tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+
+            }          
+
+        </script>
+
+    </body>
+</html>

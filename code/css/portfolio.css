@@ -1,0 +1,126 @@
+.portfolio_body{
+    width: 100%;
+    height: calc(100vh - 80px);  /* 100% - nav(80px) */
+    padding: 60px 120px; /* 70 */
+    display: flex;
+    flex-direction: row;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+}
+/* Bubble */
+.portfolio_body::before {
+    position: absolute;
+    content: '';
+    height: 600px;
+    width: 600px;
+    border-radius: 50%;
+    left: -12%;
+    top: 40%;
+    background: linear-gradient(45deg, #7f00ff, pink);
+    animation: object1 6s linear infinite;
+}
+.portfolio_body::after {
+    position: absolute;
+    content: '';
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    left: 35%;
+    top: 12%;
+    background: linear-gradient(45deg, #7f00ff, pink);
+    animation: object2 6s linear infinite;
+}
+
+.mywork_text{
+    width: 100%;
+    height: 20%;
+}
+h2 {
+    display: flex;
+    font-size: 4em;
+    font-weight: 900;
+    color: #3d535f;
+    overflow: hidden;
+    height: 100%;
+}
+
+.mywork{
+    width: 100%;
+    height: 75%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 30px;
+}
+.work_card{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    width: 400px;
+    height: 400px;
+    z-index: 5;
+}
+.work_card img{
+    object-fit:inherit;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.83),#ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.layer a{
+    margin-top: 20px;
+    color: #ff004f;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+.work_card:hover img{
+    transform: scale(1.1);
+}
+.work_card:hover .layer{
+    height: 100%;
+}
+.btn{
+    display: block;
+    margin: 20px auto;
+    width: fit-content;
+    border: 1px solid #7f00ff;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+    background-color: #3d535f;
+    visibility: hidden;
+}
+.btn:hover{
+    background: #7f00ff;
+}
