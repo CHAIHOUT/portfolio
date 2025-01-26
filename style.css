@@ -153,6 +153,7 @@ h1 {
     color: #7f00ff;
     text-transform: capitalize;
     overflow-x:hidden;
+    margin-left: 10px;
 }
 
 p {
